@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 25% auto 25%;
+    height: 600px;
+}
+
+.header, .sidebar, .mainContent, .footer {
+    background-color: #616161;
+    margin: 5px;
+    text-align: center;
+}
+
+.header {
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.sidebar {
+    grid-row-start: 2;
+    grid-row-end: -2;
+}
+.mainContent {
+    grid-column-start: 2;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: -2;
+}
+
+.footer {
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
