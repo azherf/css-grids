@@ -1,6 +1,6 @@
 .container {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, [col-start] 25% [col-end]);
     grid-template-rows: 25% auto 25%;
     height: 600px;
     grid-template-areas: "header header header header"
@@ -18,7 +18,8 @@
 .header {
     /* grid-column-start: 1;
     grid-column-end: -1; */
-    grid-area: header;
+    /* grid-area: header; */
+    grid-column: col-start 1 / col-end 2;
 }
 
 .sidebar {
