@@ -3,6 +3,10 @@
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: 25% auto 25%;
     height: 600px;
+    grid-template-areas: "header header header header"
+                        "side main main main"
+                        "side main main main"
+                        "footer footer footer footer";
 }
 
 .header, .sidebar, .mainContent, .footer {
@@ -12,22 +16,26 @@
 }
 
 .header {
-    grid-column-start: 1;
-    grid-column-end: -1;
+    /* grid-column-start: 1;
+    grid-column-end: -1; */
+    grid-area: header;
 }
 
 .sidebar {
-    grid-row-start: 2;
-    grid-row-end: -2;
+    /* grid-row-start: 2; */
+    /* grid-row-end: -2; */
+    grid-area: side;
 }
 .mainContent {
-    grid-column-start: 2;
+    /* grid-column-start: 2;
     grid-column-end: -1;
     grid-row-start: 2;
-    grid-row-end: -2;
+    grid-row-end: -2; */
+    grid-area: main;
 }
 
 .footer {
-    grid-column-start: 1;
-    grid-column-end: -1;
+    /* grid-column-start: 1;
+    grid-column-end: -1; */
+    grid-area: footer;
 }
