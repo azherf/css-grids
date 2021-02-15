@@ -1,8 +1,9 @@
 .container {
     margin: 20px;
     display: grid;
-    height: 500px;
-    /* grid-template-columns: 200px 5rem 20% auto; */
+    /* height: 600px;
+    width: 600px; */
+    /* grid-template-columns: 200px 5rem 20% 5rem; */
     grid-template-columns: repeat(4, 25%);
     /* grid-template-rows: 5rem auto; */
     /* grid-template-rows: 5rem minmax(10px, 200px) 10rem; */
@@ -13,11 +14,27 @@
     grid-template-areas: "header header header header"
                             "side side main main"
                             "footer footer footer footer";
+
+    justify-items: stretch; /*Align the children Along the x-axis rtl*/
+    align-items: stretch; /*Align the children Along the y-axis rtl*/
+    justify-content: normal; /*Move the entire grid container along the x-axis*/
+    align-content: normal; /*Move the entire grid container along the y-axis*/
 }
 
+@media (max-width: 40rem) {
+    .container {
+        grid-template-rows: [row-1-start] 5rem [row-1-end row-2-start] minmax(10px, 200px) [row-2-end row-3-start] 10rem [row-3-end row-4-start] 100px [row-4-end];
+        grid-template-areas: "header header header header"
+                            "main main main main"
+                            "side side side side"
+                            "footer footer footer footer";
+    }
+}
 .el1 {
     background: rgba(255, 154, 72, 0.5);
     grid-area: header;
+    justify-self: stretch; /*Align item inside it's track along x-axis*/
+    align-self: stretch; /*Align item inside it's track along y-axis*/
 }
 
 .el2 {
